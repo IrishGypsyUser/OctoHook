@@ -43,14 +43,8 @@ local executor = (
     'unknown'
 )
 
-local customfont
-local succ, err = pcall(function()
-    customfont = Drawing.new("Font", "monaco")
-    customfont.Data = game:HttpGet("https://raw.githubusercontent.com/razorwarecc/custom-fonts/main/monaco-font.ttf")
-end)
-if not succ then
-    customfont = 2 -- or whatever drawing font
-end
+local customfont = Drawing.new("Font", "monaco")
+customfont.Data = game:HttpGet("https://raw.githubusercontent.com/razorwarecc/custom-fonts/main/monaco-font.ttf")
 
 local library = {
     windows = {};
