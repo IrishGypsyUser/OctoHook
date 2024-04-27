@@ -13,6 +13,8 @@
 
 -- // Load
 
+
+
 local startupArgs = ({...})[1] or {}
 
 if getgenv().library ~= nil then
@@ -40,8 +42,15 @@ local executor = (
     getexecutorname and getexecutorname() or
     'unknown'
 )
-local customfont = Drawing.new("Font", "monaco")
-customfont.Data = game:HttpGet("https://raw.githubusercontent.com/razorwarecc/custom-fonts/main/monaco-font.ttf")
+local customfont
+local succ, err = pcall(function()
+    customfont = Drawing.new("Font", "fontname")
+    customfont.Data = game:HttpGet("fontlink")
+end)
+if not succ then
+    customfont = 2 -- or whatever drawing font
+end
+
 local library = {
     windows = {};
     indicators = {};
