@@ -43,8 +43,7 @@ local executor = (
     'unknown'
 )
 
-local customfont = Drawing.new("Font", "Monaco")
-customfont.Data = game:HttpGet("https://raw.githubusercontent.com/razorwarecc/custom-fonts/main/monaco-font.ttf")
+local customfont = Drawing.Fonts.2
 
 local library = {
     windows = {};
