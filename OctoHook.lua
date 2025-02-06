@@ -43,7 +43,7 @@ local executor = (
     'unknown'
 )
 
-local customfont = 2
+local customfont = getgenv().octofont or 2
 
 local library = {
     windows = {};
